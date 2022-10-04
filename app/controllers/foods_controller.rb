@@ -8,6 +8,7 @@ class FoodsController < ApplicationController
 
   # GET /foods/1 or /foods/1.json
   def show
+    
   end
 
   # GET /foods/new

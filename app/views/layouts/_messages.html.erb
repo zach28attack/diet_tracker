@@ -1,13 +1,3 @@
-<%flash.each do |name,msg|%>
-    <%%if flash[:alert]%>
-        <%=msg%>
-    <%else flash[:notice]%>
-        <%=msg%>
-    <%end%>
-<%end%>
-
-
-
 <% flash.each do |name, msg|%>
     <%if flash[:alert]%>
     <div class="alert alert-danger fs-6 alert-dismissible fade show" role="alert">

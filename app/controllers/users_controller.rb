@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     def new
-        @user = User.new
+        @user = User.new(user_params)
+        debugger
         
     end
     def index
@@ -11,15 +12,17 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             flash[:notice] = "You have successfully created an account"
+            redirect_to foods_path
         else
-            redirect_to new_user_path
-            flash[:alert] = "Something went wrong,"
+
+            render :new
+            
         end
         
     end
 
     private
     def user_params
-        params.fetch(:food, {}).permit(:name, :calories)
+        params.fetch(:user, {}).permit(:username, :password_digest)
     end
 end
